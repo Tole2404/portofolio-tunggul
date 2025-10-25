@@ -78,12 +78,12 @@ export default function About() {
               ) : (
                 <>
                   <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    I'm a <span className="font-semibold text-gray-900 dark:text-white">Full Stack Developer</span> with a passion for 
+                    I&apos;m a <span className="font-semibold text-gray-900 dark:text-white">Full Stack Developer</span> with a passion for 
                     creating digital products that make a difference. I combine technical expertise with creative 
                     problem-solving to build web applications that are both functional and beautiful.
                   </p>
                   <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-                    My journey in web development started with curiosity and has evolved into a career I'm truly 
+                    My journey in web development started with curiosity and has evolved into a career I&apos;m truly 
                     passionate about. I believe in writing clean code, following best practices, and continuously 
                     learning new technologies to stay ahead in this fast-paced industry.
                   </p>
@@ -142,7 +142,7 @@ export default function About() {
                 href="#contact"
                 className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg font-semibold shadow-lg"
               >
-                Let's Work Together
+                Let&apos;s Work Together
               </a>
               <a
                 href="#projects"

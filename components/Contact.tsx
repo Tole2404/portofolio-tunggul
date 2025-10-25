@@ -85,12 +85,12 @@ export default function Contact() {
         >
           <div className="inline-block">
             <h2 className="text-4xl md:text-5xl font-bold mb-2">
-              Let's Connect
+              Let&apos;s Connect
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-primary-600 to-purple-600 rounded-full"></div>
           </div>
           <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl">
-            Have a project in mind? Let's discuss how we can work together
+            Have a project in mind? Let&apos;s discuss how we can work together
           </p>
         </motion.div>
 
@@ -101,9 +101,9 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold mb-6">Let's talk about everything!</h3>
+            <h3 className="text-2xl font-bold mb-6">Let&apos;s talk about everything!</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-8">
-              Don't like forms? Send me an email or give me a call. I'm always open to
+              Don&apos;t like forms? Send me an email or give me a call. I&apos;m always open to
               discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
 

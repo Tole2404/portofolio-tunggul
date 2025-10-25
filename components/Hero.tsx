@@ -73,7 +73,7 @@ export default function Hero() {
             )}
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight lg:text-shadow-none text-shadow-lg">
-              Hi, I'm{' '}
+              Hi, I&apos;m{' '}
               <span className="relative inline-block">
                 <span className="relative z-10 bg-gradient-to-r from-primary-600 via-purple-600 to-pink-600 bg-clip-text text-transparent lg:text-shadow-none drop-shadow-lg break-words">
                   {settings.hero_name}

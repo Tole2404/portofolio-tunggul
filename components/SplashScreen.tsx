@@ -164,7 +164,7 @@ export default function SplashScreen() {
               >
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight">
                   <span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
-                    LET'S
+                    LET&apos;S
                   </span>
                   <br />
                   <motion.span
@@ -200,7 +200,7 @@ export default function SplashScreen() {
                   className="absolute inset-0 text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-purple-500 mix-blend-screen"
                   aria-hidden="true"
                 >
-                  LET'S<br />GO!
+                  LET&apos;S<br />GO!
                 </motion.div>
               </motion.div>
               
