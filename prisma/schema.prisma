@@ -1,0 +1,79 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Project {
+  id              String   @id @default(cuid())
+  title           String
+  description     String
+  image           String
+  tags            String   // JSON string array
+  github          String
+  demo            String
+  gradient        String
+  featured        Boolean  @default(false)
+  order           Int      @default(0)
+  // New fields for modal details
+  fullDescription String?  // Detailed description
+  features        String?  // JSON string array
+  screenshots     String?  // JSON string array of image URLs
+  challenges      String?  // Challenges faced
+  solutions       String?  // Solutions implemented
+  role            String?  // Your role in the project
+  timeline        String?  // Project timeline
+  teamSize        String?  // Team size
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model Skill {
+  id        String   @id @default(cuid())
+  name      String
+  level     Int
+  category  String
+  icon      String
+  color     String
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Experience {
+  id          String   @id @default(cuid())
+  type        String   // 'work' or 'education'
+  title       String
+  company     String
+  location    String
+  period      String
+  description String
+  tags        String   // JSON string array
+  color       String
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Settings {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

@@ -1,0 +1,430 @@
+{
+  "settings": {
+    "hero_name": "Tunggul Bayu Kusuma",
+    "hero_title": "Full Stack Developer",
+    "hero_description": "Saya Tunggul Bayu Kusuma, Full Stack Developer fresh graduate dengan fokus pada MERN & PHP. Saya membangun aplikasi web yang fungsional dan mudah digunakan, serta terus belajar teknologi agar siap berkontribusi.",
+    "hero_image": "/images/profile.jpg",
+    "hero_github": "https://github.com/Tole2404",
+    "hero_linkedin": "https://www.linkedin.com/in/tunggulbayukusuma/",
+    "hero_email": "tunggulbayukusuma@gmail.com",
+    "hero_available": "true",
+    "hero_cv": "/cv/Tunggul_Bayu_Kusuma_CV.pdf",
+    "about_description": "Saya seorang fresh graduate dari Universitas Budi Luhur dengan minat besar di pengembangan web full stack. Selama kuliah dan magang, saya berkesempatan membangun beberapa proyek seperti sistem rekrutmen berbasis web, aplikasi catatan online, dan katalog restoran berbasis PWA. Saya terbiasa bekerja dalam tim, belajar mandiri, dan berusaha menyelesaikan tugas dengan hasil terbaik.",
+    "about_years_experience": "<1",
+    "about_projects_completed": "9",
+    "about_happy_clients": "2",
+    "footer_name": "Tunggul Bayu Kusuma",
+    "footer_tagline": "Full Stack Developer | MERN & PHP Enthusiast",
+    "footer_email": "tunggulbayukusuma@gmail.com",
+    "footer_phone": "+62 677 2091 2755",
+    "footer_location": "Indonesia",
+    "footer_github": "https://github.com/Tole2404",
+    "footer_linkedin": "https://www.linkedin.com/in/tunggulbayukusuma/"
+  },
+  "skills": [
+  {
+    "name": "React",
+    "level": 85,
+    "category": "Frontend",
+    "icon": "react",
+    "color": "blue",
+    "order": 1
+  },
+  {
+    "name": "JavaScript",
+    "level": 88,
+    "category": "Frontend",
+    "icon": "javascript",
+    "color": "yellow",
+    "order": 3
+  },
+  {
+    "name": "HTML & CSS",
+    "level": 90,
+    "category": "Frontend",
+    "icon": "htmlcss",
+    "color": "orange",
+    "order": 4
+  },
+  {
+    "name": "Node.js",
+    "level": 80,
+    "category": "Backend",
+    "icon": "nodejs",
+    "color": "green",
+    "order": 5
+  },
+  {
+    "name": "Express.js",
+    "level": 75,
+    "category": "Backend",
+    "icon": "express",
+    "color": "gray",
+    "order": 6
+  },
+  {
+    "name": "PHP",
+    "level": 85,
+    "category": "Backend",
+    "icon": "php",
+    "color": "indigo",
+    "order": 7
+  },
+  {
+    "name": "CodeIgniter 4",
+    "level": 80,
+    "category": "Backend",
+    "icon": "codeigniter",
+    "color": "red",
+    "order": 8
+  },
+  {
+    "name": "MySQL",
+    "level": 82,
+    "category": "Database",
+    "icon": "mysql",
+    "color": "blue",
+    "order": 9
+  },
+  {
+    "name": "MongoDB",
+    "level": 78,
+    "category": "Database",
+    "icon": "mongodb",
+    "color": "green",
+    "order": 10
+  },
+  {
+    "name": "Git & GitHub",
+    "level": 85,
+    "category": "Tools",
+    "icon": "git",
+    "color": "orange",
+    "order": 11
+  }
+],
+  
+"projects": [
+  {
+    "title": "SarasSingkat (Capstone Project)",
+    "description": "Platform digital yang menyediakan ringkasan buku yang menarik dan informatif dalam waktu singkat untuk meningkatkan literasi dan minat baca masyarakat Indonesia.",
+    "image": "/images/projects/sarassingkat.jpg",
+    "tags": ["React", "Node.js", "MongoDB", "Express", "RESTful API"],
+    "github": "https://github.com/Tole2404/Capstone-SarasSingkat",
+    "demo": "https://frontend-saras-singkat.vercel.app/",
+    "gradient": "from-blue-500 to-cyan-500",
+    "featured": true,
+    "order": 1,
+    "fullDescription": "SarasSingkat adalah platform digital yang dikembangkan dengan tema 'Enhancing Quality Human Resources' untuk mengatasi krisis literasi di Indonesia dan meningkatkan minat baca masyarakat. Menurut PISA (Programme for International Student Assessment), skor literasi Indonesia berada di peringkat 70 dari 81 negara, menunjukkan tingkat literasi yang masih rendah. SarasSingkat hadir sebagai solusi inovatif yang menyediakan ringkasan buku yang engaging dan informatif, membantu masyarakat Indonesia meningkatkan pengetahuan dan wawasan tanpa harus membaca buku secara keseluruhan. Platform ini dikembangkan sebagai capstone project dari program Studi Independen Dicoding menggunakan MERN Stack.",
+    "features": [
+      "Ringkasan buku yang ringkas dan mudah dipahami dengan poin-poin utama",
+      "Beragam kategori buku (novel, non-fiksi, biografi, dan lainnya)",
+      "Rekomendasi buku berdasarkan minat dan preferensi pengguna",
+      "Fitur pencarian buku berdasarkan judul, penulis, keyword, atau genre favorit",
+      "Save for Later untuk menyimpan ringkasan menarik",
+      "Kolaborasi dengan penulis buku untuk ringkasan yang informatif",
+      "Antarmuka responsif dan user-friendly",
+      "Autentikasi pengguna dengan JWT"
+    ],
+    "screenshots": [
+      "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800"
+    ],
+    "challenges": "Tantangan utama adalah mengatasi krisis literasi di Indonesia yang berada di peringkat 70 dari 81 negara menurut PISA, serta membuat platform yang dapat meningkatkan minat baca masyarakat dengan cara yang engaging dan tidak membosankan.",
+    "solutions": "Mengembangkan platform yang menyediakan ringkasan buku berkualitas dalam format yang mudah dicerna, berkolaborasi dengan penulis untuk konten yang akurat, dan menerapkan sistem rekomendasi berbasis preferensi pengguna untuk meningkatkan engagement.",
+    "role": "Full Stack Developer",
+    "timeline": "Februari 2024 - Juni 2024",
+    "teamSize": "4 orang"
+  },
+  {
+    "title": "EponStore",
+    "description": "Platform e-commerce khusus untuk produk Apple yang menyediakan pengalaman belanja online yang mudah dan nyaman dengan berbagai fitur lengkap.",
+    "image": "/images/projects/eponstore.jpg",
+    "tags": ["Flutter", "Laravel", "MySQL", "REST API"],
+    "github": "https://github.com/Tole2404/EponStore",
+    "demo": "https://tole2404.github.io/portofolio.github.io/project-1.html",
+    "gradient": "from-green-500 to-emerald-500",
+    "featured": true,
+    "order": 2,
+    "fullDescription": "Epon Store adalah toko online yang berfokus pada penjualan produk Apple. Project ini merupakan bagian dari tugas mata kuliah Mobile Programming. Tujuan utama project ini adalah menyediakan pengalaman belanja online yang mudah dan nyaman bagi pengguna produk Apple. Dengan berbagai fitur yang dirancang untuk mempermudah proses belanja, Epon Store berusaha menjadi destinasi utama bagi para penggemar produk Apple. Dari iPhone hingga MacBook, semua produk Apple dapat ditemukan di Epon Store. Selain aplikasi mobile, project ini juga dilengkapi dengan web admin berbasis Laravel yang berfungsi sebagai pusat kontrol untuk mengelola produk, memantau transaksi, dan berinteraksi dengan pengguna secara efisien.",
+    "features": [
+      "Katalog produk Apple lengkap (iPhone, iPad, MacBook, dll)",
+      "Sistem pencarian dan filter produk",
+      "Shopping cart dengan real-time update",
+      "User authentication dan profile management",
+      "Order history dan tracking pemesanan",
+      "Web admin Laravel untuk manajemen produk dan transaksi",
+      "REST API untuk komunikasi mobile app dan backend",
+      "Responsive design untuk berbagai device"
+    ],
+    "screenshots": [
+      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800",
+      "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?w=800"
+    ],
+    "challenges": "Tantangan utama adalah mengintegrasikan aplikasi mobile Flutter dengan backend Laravel, memastikan komunikasi API berjalan lancar, serta mendesain interface yang user-friendly untuk pengalaman belanja yang optimal di platform mobile.",
+    "solutions": "Mengembangkan REST API yang robust dengan Laravel untuk handle semua operasi CRUD, mengimplementasikan state management yang efisien di Flutter untuk performa optimal, serta membuat web admin yang memudahkan pengelolaan produk dan monitoring transaksi secara real-time.",
+    "role": "Full Stack Developer (Mobile & Web)",
+    "timeline": "Tugas Mata Kuliah Mobile Programming",
+    "teamSize": "1 orang (Solo Project)"
+  },
+  {
+    "title": "Smart Kandang Ayam",
+    "description": "Kandang ayam otomatis berbasis Arduino dengan sistem pemberian pakan, air, dan stabilisasi suhu yang beroperasi secara otomatis menggunakan berbagai sensor.",
+    "image": "/images/projects/smart-kandang.jpg",
+    "tags": ["Arduino", "IoT", "C++", "Embedded System"],
+    "github": "https://github.com/Tole2404/Smart-kandang-ayam",
+    "demo": "https://tole2404.github.io/portofolio.github.io/project-2.html",
+    "gradient": "from-orange-500 to-red-500",
+    "featured": false,
+    "order": 3,
+    "fullDescription": "Smart Kandang Ayam adalah project kandang ayam otomatis menggunakan mikrokontroler Arduino. Project ini merupakan bagian dari tugas mata kuliah Pemrogramman Sistem Kendali. Alat atau perangkat ini adalah kandang ayam otomatis dengan sistem pemberian pakan, air, dan stabilisasi suhu di dalam kandang. Kandang ayam ini menggunakan beberapa sensor yang bekerja secara otomatis dan konsisten. Metode yang digunakan adalah prototyping dengan pola embedded system yang otomatis, menggunakan parameter untuk pemberian pakan, air, dan pencahayaan. Project ini telah mendapat pengakuan dan dipamerkan pada acara FTI FAIR di kampus.",
+    "features": [
+      "Sistem pemberian pakan otomatis dengan servo motor",
+      "Sistem pemberian air otomatis dengan water pump",
+      "Stabilisasi suhu kandang dengan DHT11 sensor",
+      "Water level monitoring dengan water sensor",
+      "Penjadwalan otomatis dengan RTC (Real Time Clock)",
+      "Kontrol relay untuk perangkat elektronik",
+      "Push button untuk kontrol manual",
+      "Power adapter untuk sumber daya stabil"
+    ],
+    "screenshots": [
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800",
+      "https://images.unsplash.com/photo-1563281577-a7be47e20db9?w=800"
+    ],
+    "challenges": "Tantangan utama adalah mengintegrasikan berbagai sensor dan aktuator agar bekerja secara sinkron dan otomatis, memastikan timing yang tepat untuk pemberian pakan dan air, serta menjaga stabilitas suhu kandang dalam kondisi yang berbeda-beda.",
+    "solutions": "Menggunakan Arduino Uno sebagai pusat kontrol dengan programming di Arduino IDE, mengimplementasikan RTC untuk penjadwalan yang akurat, menggunakan DHT11 untuk monitoring suhu real-time, dan menerapkan sistem relay untuk kontrol perangkat elektronik dengan aman. Project ini berhasil dipamerkan di FTI FAIR sebagai bentuk apresiasi atas inovasi yang dibuat.",
+    "role": "IoT & Embedded System Developer",
+    "timeline": "Tugas Mata Kuliah Pemrogramman Sistem Kendali",
+    "teamSize": "1 orang (Solo Project)"
+  },
+  {
+    "title": "Recruitment System & PTK",
+    "description": "Sistem manajemen recruitment karyawan dan approval PTK (Permintaan Tenaga Kerja) dengan multi-level authorization berbasis CodeIgniter 4.",
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800",
+    "tags": ["CodeIgniter 4", "PHP", "MySQL", "Bootstrap", "RESTful API"],
+    "github": "https://github.com/Tole2404/recruitment-system",
+    "demo": "https://github.com/Tole2404/recruitment-system",
+    "gradient": "from-purple-500 to-indigo-500",
+    "featured": true,
+    "order": 4,
+    "fullDescription": "Sistem Recruitment & PTK adalah aplikasi web untuk mengelola proses recruitment karyawan dan approval PTK dengan multi-level authorization. Sistem ini mengelola 2 alur utama: Alur PTK (Permintaan Tenaga Kerja) untuk proses pengajuan dan approval kebutuhan karyawan baru, dan Alur Application Form untuk proses pendaftaran dan seleksi kandidat.",
+    "features": [
+      "Multi-level approval workflow (Department Head → Director → HR/GA)",
+      "Application form untuk pelamar dengan upload dokumen",
+      "Dashboard analytics untuk setiap role",
+      "Status tracking PTK dan aplikasi real-time",
+      "Notifikasi email otomatis",
+      "Export laporan ke PDF dan Excel",
+      "RESTful API untuk integrasi sistem lain",
+      "Role-based access control (RBAC)"
+    ],
+    "screenshots": [
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800"
+    ],
+    "challenges": "Mengimplementasikan multi-level approval workflow yang kompleks dengan berbagai role dan permission, serta memastikan data konsisten di setiap tahap approval.",
+    "solutions": "Menggunakan state machine pattern untuk manage workflow, implementasi middleware untuk authorization, dan database transaction untuk ensure data consistency.",
+    "role": "Full Stack Developer",
+    "timeline": "Agustus 2024 - Oktober 2024",
+    "teamSize": "Solo Project"
+  },
+  {
+    "title": "Dinoku - Jurnal Pemantauan TK",
+    "description": "Aplikasi web berbasis Laravel untuk pemantauan dan pencatatan 7 Kebiasaan Baik Anak Taman Kanak-Kanak dengan sistem multi-role.",
+    "image": "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800",
+    "tags": ["Laravel 11", "MySQL", "TailwindCSS", "Alpine.js", "Chart.js"],
+    "github": "https://github.com/Tole2404/jurnal-dinoku",
+    "demo": "https://github.com/Tole2404/jurnal-dinoku",
+    "gradient": "from-pink-500 to-rose-500",
+    "featured": true,
+    "order": 5,
+    "fullDescription": "Dinoku adalah aplikasi web untuk pemantauan dan pencatatan 7 Kebiasaan Baik Anak TK. Dirancang untuk membantu guru dan orang tua dalam memantau perkembangan karakter anak secara terstruktur dan sistematis. Aplikasi ini menyediakan dashboard khusus untuk Admin, Guru, dan Orang Tua dengan akses data yang disesuaikan dengan peran pengguna.",
+    "features": [
+      "Multi-role authentication (Admin, Guru, Orang Tua)",
+      "Pencatatan jurnal harian per siswa",
+      "Pemantauan 7 kebiasaan baik anak",
+      "Dashboard dengan visualisasi grafik perkembangan",
+      "Notifikasi real-time ke orang tua",
+      "Export laporan ke PDF dan Excel",
+      "Komunikasi guru dan orang tua",
+      "Analisis perkembangan per anak atau per kelas"
+    ],
+    "screenshots": [
+      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800",
+      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800"
+    ],
+    "challenges": "Membuat sistem multi-authentication yang terpisah untuk 3 role berbeda (Admin, Guru, Orang Tua) dengan data access yang berbeda-beda.",
+    "solutions": "Menggunakan Laravel Breeze dengan custom multi-auth guards, implementasi policy untuk authorization, dan middleware untuk protect routes berdasarkan role.",
+    "role": "Full Stack Developer",
+    "timeline": "3 bulan",
+    "teamSize": "Solo Project"
+  },
+  {
+    "title": "UMKM Ngandong",
+    "description": "Platform digital untuk UMKM Ngandong yang menyediakan katalog produk, sistem pemesanan, dan manajemen inventory.",
+    "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
+    "tags": ["PHP", "MySQL", "Bootstrap", "JavaScript"],
+    "github": "https://github.com/Tole2404/umkm-ngandong",
+    "demo": "https://github.com/Tole2404/umkm-ngandong",
+    "gradient": "from-amber-500 to-orange-500",
+    "featured": false,
+    "order": 6,
+    "fullDescription": "UMKM Ngandong adalah platform digital yang dikembangkan untuk membantu UMKM lokal dalam mengelola bisnis mereka secara online. Platform ini menyediakan fitur katalog produk, sistem pemesanan, dan manajemen inventory yang mudah digunakan.",
+    "features": [
+      "Katalog produk dengan search dan filter",
+      "Sistem pemesanan online",
+      "Manajemen inventory dan stok",
+      "Dashboard admin untuk kelola produk",
+      "Laporan penjualan dan statistik",
+      "Responsive design untuk mobile"
+    ],
+    "screenshots": [
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800"
+    ],
+    "challenges": "Membuat sistem yang user-friendly untuk pemilik UMKM yang tidak familiar dengan teknologi.",
+    "solutions": "Desain interface yang sederhana dan intuitif, menyediakan tutorial penggunaan, dan implementasi fitur drag-and-drop untuk upload produk.",
+    "role": "Full Stack Developer",
+    "timeline": "2 bulan",
+    "teamSize": "Solo Project"
+  },
+  {
+    "title": "Pergimmikan",
+    "description": "Aplikasi web untuk manajemen data perguruan tinggi dengan fitur akademik dan administrasi.",
+    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800",
+    "tags": ["PHP", "MySQL", "Bootstrap", "jQuery"],
+    "github": "https://github.com/Tole2404/pergimmikan",
+    "demo": "https://github.com/Tole2404/pergimmikan",
+    "gradient": "from-teal-500 to-cyan-500",
+    "featured": false,
+    "order": 7,
+    "fullDescription": "Pergimmikan adalah aplikasi web untuk manajemen data perguruan tinggi yang mencakup fitur akademik dan administrasi. Sistem ini membantu dalam pengelolaan data mahasiswa, dosen, mata kuliah, dan jadwal perkuliahan.",
+    "features": [
+      "Manajemen data mahasiswa dan dosen",
+      "Sistem penjadwalan mata kuliah",
+      "Manajemen nilai dan transkrip",
+      "Dashboard akademik",
+      "Laporan dan statistik",
+      "Multi-user access dengan role berbeda"
+    ],
+    "screenshots": [
+      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800"
+    ],
+    "challenges": "Mengelola relasi data yang kompleks antara mahasiswa, dosen, mata kuliah, dan jadwal.",
+    "solutions": "Implementasi database normalization yang baik, menggunakan foreign keys untuk maintain data integrity, dan query optimization untuk performa.",
+    "role": "Backend Developer",
+    "timeline": "2 bulan",
+    "teamSize": "2 orang"
+  },
+  {
+    "title": "Kain Lap Majun - E-Commerce",
+    "description": "Platform e-commerce full-stack untuk penjualan kain lap majun dengan fitur lengkap shopping cart, product management, dan admin panel.",
+    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800",
+    "tags": ["Laravel 11", "MySQL", "TailwindCSS", "Vite", "Sanctum"],
+    "github": "https://github.com/Tole2404/darmin-majun",
+    "demo": "https://github.com/Tole2404/darmin-majun",
+    "gradient": "from-blue-600 to-indigo-600",
+    "featured": true,
+    "order": 8,
+    "fullDescription": "Kain Lap Majun adalah platform e-commerce full-stack yang dirancang khusus untuk penjualan kain lap majun berkualitas. Project ini menggabungkan backend Laravel yang powerful dengan frontend yang responsive dan modern menggunakan TailwindCSS. Dilengkapi dengan fitur authentication, shopping cart, dan admin panel untuk manajemen produk.",
+    "features": [
+      "Product management dengan CRUD lengkap dan upload gambar",
+      "Category management untuk organisasi produk",
+      "Shopping cart dengan session management",
+      "Product search dan filter berdasarkan kategori",
+      "Authentication system dengan Laravel Sanctum",
+      "User roles (Admin dan Customer) dengan hak akses berbeda",
+      "Admin dashboard dengan statistik penjualan",
+      "Responsive design dengan TailwindCSS"
+    ],
+    "screenshots": [
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800",
+      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800"
+    ],
+    "challenges": "Mengimplementasikan shopping cart yang persistent dan memastikan data konsisten antara session dan database, serta mengelola file upload untuk product images.",
+    "solutions": "Menggunakan Laravel session untuk shopping cart, implementasi Laravel File Storage untuk handle uploads dengan validation, dan database transaction untuk ensure data consistency.",
+    "role": "Full Stack Developer",
+    "timeline": "3 bulan",
+    "teamSize": "Solo Project"
+  },
+  {
+    "title": "Bob Marley Tribute - AI Chatbot",
+    "description": "Website tribute interaktif untuk Bob Marley dengan fitur AI chatbot 'Curhat Om Bob', biografi, musik Spotify, dan inspirasi reggae.",
+    "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800",
+    "tags": ["HTML", "CSS", "JavaScript", "AI Chatbot", "Spotify API"],
+    "github": "https://github.com/Tole2404/chatbot-bobmarley",
+    "demo": "https://tole2404.github.io/chatbot-bobmarley",
+    "gradient": "from-red-500 via-yellow-500 to-green-500",
+    "featured": false,
+    "order": 9,
+    "fullDescription": "Website tribute interaktif yang didedikasikan untuk mengenang legenda musik reggae, Bob Marley. Proyek ini menampilkan biografi lengkap, integrasi musik Spotify, koleksi pesan inspiratif, dan fitur unik AI chatbot 'Curhat Om Bob' yang dapat berinteraksi dengan karakter Bob Marley. Website ini dirancang dengan tema reggae yang kental dengan warna merah, kuning, dan hijau.",
+    "features": [
+      "Hero section dengan tema reggae dan animasi dinamis",
+      "Timeline biografi interaktif Bob Marley",
+      "Integrasi Spotify player untuk mendengarkan musik",
+      "Koleksi 6 kategori kutipan inspiratif",
+      "AI Chatbot 'Curhat Om Bob' dengan karakter Bob Marley",
+      "Riwayat percakapan tersimpan di localStorage",
+      "Desain responsif dengan gradien warna reggae",
+      "Animasi smooth scroll dan parallax effects"
+    ],
+    "screenshots": [
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800",
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800"
+    ],
+    "challenges": "Membuat AI chatbot yang dapat merespons dengan karakter Bob Marley dan mengintegrasikan Spotify API untuk music player.",
+    "solutions": "Menggunakan AI API dengan custom prompt untuk personality Bob Marley, implementasi localStorage untuk chat history, dan Spotify Web API untuk embed music player.",
+    "role": "Frontend Developer",
+    "timeline": "1 bulan",
+    "teamSize": "Solo Project"
+  }
+],
+  
+"experience": [
+  {
+    "type": "work",
+    "title": "IT Internship",
+    "company": "PT Kansai Prakarsa Coatings",
+    "location": "Tangerang, Indonesia",
+    "period": "November 2024 - Desember 2024",
+    "description": "Mengembangkan aplikasi web Recruitment Flow menggunakan CodeIgniter 4. Membuat fitur job posting, formulir lamaran, serta modul manajemen proses rekrutmen dan online psychotest. Terlibat dalam desain database, implementasi CRUD, dan dokumentasi proyek.",
+    "tags": ["PHP", "CodeIgniter 4", "MySQL", "Web App"],
+    "color": "from-blue-500 to-cyan-500",
+    "order": 1
+  },
+  {
+    "type": "work",
+    "title": "Studi Independen - Frontend & Backend Web Development",
+    "company": "Dicoding Indonesia",
+    "location": "Remote",
+    "period": "Februari 2024 - Juni 2024",
+    "description": "Belajar dan mengerjakan berbagai proyek seperti BookshelApp, Notes App dengan RESTful API, serta Katalog Restoran berbasis PWA. Berkolaborasi dalam pembuatan capstone project SarasSingkat dengan MERN Stack.",
+    "tags": ["React", "Node.js", "MongoDB", "PWA", "RESTful API"],
+    "color": "from-green-500 to-emerald-500",
+    "order": 2
+  },
+  {
+    "type": "work",
+    "title": "Praktek Kerja Lapangan (PKL)",
+    "company": "Perum BULOG",
+    "location": "Jakarta, Indonesia",
+    "period": "Juni 2019 - Agustus 2019",
+    "description": "Melakukan verifikasi dan validasi data untuk menjaga integritas lebih dari 3500 entri database. Memastikan akurasi data sesuai dengan standar perusahaan dan menjaga kerahasiaan informasi.",
+    "tags": ["Data Entry", "Database", "Data Validation"],
+    "color": "from-purple-500 to-pink-500",
+    "order": 3
+  },
+  {
+    "type": "education",
+    "title": "S1 Teknik Informatika",
+    "company": "Universitas Budi Luhur",
+    "location": "Jakarta Selatan, Indonesia",
+    "period": "Oktober 2021 - Juni 2025",
+    "description": "Menempuh pendidikan di bidang Teknik Informatika dengan fokus pada web development dan software engineering. IPK terakhir 3.86. Aktif dalam pengembangan proyek dan tugas berbasis pemrograman.",
+    "tags": ["Teknik Informatika", "Web Development", "Software Engineering"],
+    "color": "from-orange-500 to-red-500",
+    "order": 4
+  }
+]
+
+}
