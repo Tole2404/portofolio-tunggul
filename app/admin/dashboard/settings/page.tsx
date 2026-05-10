@@ -429,17 +429,17 @@ export default function SettingsPage() {
                 </div>
               )}
 
-              {/* Upload Button */}
-              <div className="flex items-center gap-3">
+              {/* Upload Button & URL Input */}
+              <div className="flex flex-col sm:flex-row gap-3">
                 <label className="flex-1 cursor-pointer">
-                  <div className={`flex items-center justify-center gap-2 px-4 py-2.5 border-2 border-dashed rounded-lg transition-colors ${
+                  <div className={`h-full flex items-center justify-center gap-2 px-4 py-2.5 border-2 border-dashed rounded-lg transition-colors ${
                     uploadingCV 
                       ? 'border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 cursor-not-allowed' 
                       : 'border-gray-300 dark:border-gray-600 hover:border-primary-500 dark:hover:border-primary-400 hover:bg-gray-50 dark:hover:bg-gray-700'
                   }`}>
                     <Upload className="w-5 h-5 text-gray-400" />
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                      {uploadingCV ? 'Uploading...' : settings.hero_cv ? 'Replace CV' : 'Upload CV (PDF)'}
+                      {uploadingCV ? 'Uploading...' : 'Upload CV (PDF)'}
                     </span>
                   </div>
                   <input
@@ -450,6 +450,16 @@ export default function SettingsPage() {
                     className="hidden"
                   />
                 </label>
+                
+                <div className="flex-1">
+                  <input
+                    type="text"
+                    value={settings.hero_cv}
+                    onChange={(e) => setSettings({...settings, hero_cv: e.target.value})}
+                    className="w-full h-full min-h-[46px] px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white"
+                    placeholder="Atau paste link (Google Drive, dll)"
+                  />
+                </div>
               </div>
               
               <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
