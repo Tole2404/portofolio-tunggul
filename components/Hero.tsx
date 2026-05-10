@@ -15,7 +15,7 @@ export default function Hero() {
     hero_linkedin: 'https://linkedin.com',
     hero_email: 'your.email@example.com',
     hero_available: 'true',
-    hero_cv: '/cv/Tunggul_Bayu_Kusuma_CV.pdf',
+    hero_cv: 'https://drive.google.com/file/d/1lSyoTfEgs2--f01i8Sd-O2NUd7QXUSRb/view?usp=sharing',
     about_years: ''
   })
 
@@ -100,8 +100,7 @@ export default function Hero() {
                 <ExternalLink className="w-4 h-4 group-hover:rotate-12 transition-transform" />
               </a>
               <a
-                href={settings.hero_cv || '/cv/Tunggul_Bayu_Kusuma_CV.pdf'}
-                download="Tunggul_Bayu_Kusuma_CV.pdf"
+                href={settings.hero_cv || 'https://drive.google.com/file/d/1lSyoTfEgs2--f01i8Sd-O2NUd7QXUSRb/view?usp=sharing'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-lg font-semibold hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900 transition-all"
