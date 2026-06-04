@@ -80,9 +80,14 @@ export default function Projects() {
     try {
       const res = await fetch('/api/projects')
       const data = await res.json()
-      setProjects(data)
+      if (Array.isArray(data)) {
+        setProjects(data)
+      } else {
+        setProjects([])
+      }
     } catch (error) {
       console.error('Failed to fetch projects:', error)
+      setProjects([])
     } finally {
       setLoading(false)
     }
@@ -180,19 +185,30 @@ export default function Projects() {
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
-                    {JSON.parse(project.tags).slice(0, 3).map((tag: string, tagIndex: number) => (
-                      <span
-                        key={tagIndex}
-                        className="px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-semibold bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                    {JSON.parse(project.tags).length > 3 && (
-                      <span className="px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-semibold bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-lg">
-                        +{JSON.parse(project.tags).length - 3}
-                      </span>
-                    )}
+                    {(() => {
+                      let tags = [];
+                      try {
+                        const parsed = JSON.parse(project.tags || '[]');
+                        if (Array.isArray(parsed)) tags = parsed;
+                      } catch (e) {}
+                      return (
+                        <>
+                          {tags.slice(0, 3).map((tag: string, tagIndex: number) => (
+                            <span
+                              key={tagIndex}
+                              className="px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-semibold bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                          {tags.length > 3 && (
+                            <span className="px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-semibold bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-lg">
+                              +{tags.length - 3}
+                            </span>
+                          )}
+                        </>
+                      );
+                    })()}
                   </div>
 
                   {/* Links */}
