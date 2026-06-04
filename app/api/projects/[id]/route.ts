@@ -20,7 +20,15 @@ export async function PUT(
         demo: data.demo,
         gradient: data.gradient,
         featured: data.featured,
-        order: data.order
+        order: data.order,
+        fullDescription: data.fullDescription,
+        features: data.features ? JSON.stringify(data.features) : null,
+        screenshots: data.screenshots ? JSON.stringify(data.screenshots) : null,
+        challenges: data.challenges,
+        solutions: data.solutions,
+        role: data.role,
+        timeline: data.timeline,
+        teamSize: data.teamSize
       }
     })
 

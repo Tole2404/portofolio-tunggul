@@ -31,7 +31,15 @@ export async function POST(request: NextRequest) {
         demo: data.demo,
         gradient: data.gradient,
         featured: data.featured || false,
-        order: data.order || 0
+        order: data.order || 0,
+        fullDescription: data.fullDescription,
+        features: data.features ? JSON.stringify(data.features) : null,
+        screenshots: data.screenshots ? JSON.stringify(data.screenshots) : null,
+        challenges: data.challenges,
+        solutions: data.solutions,
+        role: data.role,
+        timeline: data.timeline,
+        teamSize: data.teamSize
       }
     })
 
