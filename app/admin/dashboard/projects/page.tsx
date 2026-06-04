@@ -86,6 +86,7 @@ export default function ProjectsManagement() {
   const [screenshotFiles, setScreenshotFiles] = useState<File[]>([])
   const [imageCompressionInfo, setImageCompressionInfo] = useState<string>('')
   const [screenshotCompressionInfo, setScreenshotCompressionInfo] = useState<string>('')
+  const [isSaving, setIsSaving] = useState(false)
 
   useEffect(() => {
     fetchProjects()
@@ -112,7 +113,7 @@ export default function ProjectsManagement() {
     const file = e.target.files?.[0]
     if (file) {
       setImageFile(file)
-      setImageCompressionInfo('Compressing...')
+      setImageCompressionInfo('⏳ Compressing image...')
       try {
         const compressedBase64 = await compressImage(file, 1000)
         const originalSize = (file.size / 1024).toFixed(1)
@@ -188,6 +189,7 @@ export default function ProjectsManagement() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setIsSaving(true)
     
     const tagsArray = formData.tags.split(',').map(tag => tag.trim())
     const featuresArray = formData.features.split('\n').map(f => f.trim()).filter(f => f)
@@ -218,6 +220,8 @@ export default function ProjectsManagement() {
       fetchProjects()
     } catch (error) {
       console.error('Failed to save project:', error)
+    } finally {
+      setIsSaving(false)
     }
   }
 
@@ -666,7 +670,7 @@ export default function ProjectsManagement() {
                           onChange={async (e) => {
                             const files = Array.from(e.target.files || [])
                             setScreenshotFiles(files)
-                            setScreenshotCompressionInfo(`Compressing ${files.length} images...`)
+                            setScreenshotCompressionInfo(`⏳ Compressing ${files.length} images...`)
                             
                             // Compress all screenshot files
                             const urls: string[] = []
@@ -771,13 +775,20 @@ export default function ProjectsManagement() {
               <div className="flex gap-3 pt-4">
                 <button
                   type="submit"
-                  className="flex-1 px-4 py-2 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                  disabled={isSaving || imageCompressionInfo.includes('⏳') || screenshotCompressionInfo.includes('⏳')}
+                  className="flex-1 px-4 py-2 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  {editingProject ? 'Update Project' : 'Add Project'}
+                  {isSaving ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Saving...
+                    </>
+                  ) : editingProject ? 'Update Project' : 'Add Project'}
                 </button>
                 <button
                   type="button"
                   onClick={closeModal}
+                  disabled={isSaving}
                   className="px-4 py-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                 >
                   Cancel
