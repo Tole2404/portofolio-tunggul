@@ -62,9 +62,14 @@ export default function ProjectsManagement() {
     try {
       const res = await fetch('/api/projects')
       const data = await res.json()
-      setProjects(data)
+      if (Array.isArray(data)) {
+        setProjects(data)
+      } else {
+        setProjects([])
+      }
     } catch (error) {
       console.error('Failed to fetch projects:', error)
+      setProjects([])
     } finally {
       setLoading(false)
     }
@@ -275,14 +280,21 @@ export default function ProjectsManagement() {
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
-                    {JSON.parse(project.tags).map((tag: string, index: number) => (
-                      <span
-                        key={index}
-                        className="px-1.5 py-0.5 sm:px-2 sm:py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    {(() => {
+                      let tags = [];
+                      try {
+                        const parsed = JSON.parse(project.tags || '[]');
+                        if (Array.isArray(parsed)) tags = parsed;
+                      } catch(e) {}
+                      return tags.map((tag: string, index: number) => (
+                        <span
+                          key={index}
+                          className="px-1.5 py-0.5 sm:px-2 sm:py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
+                        >
+                          {tag}
+                        </span>
+                      ));
+                    })()}
                   </div>
 
                   {/* Links */}
