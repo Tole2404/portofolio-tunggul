@@ -3,6 +3,37 @@
 import { useEffect, useState } from 'react'
 import { Plus, Edit, Trash2, ExternalLink, X } from 'lucide-react'
 
+const compressImage = (file: File, maxWidth: number = 1000): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = (event) => {
+      const img = new Image();
+      img.src = event.target?.result as string;
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        let width = img.width;
+        let height = img.height;
+
+        if (width > maxWidth) {
+          height = Math.round((height * maxWidth) / width);
+          width = maxWidth;
+        }
+
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx?.drawImage(img, 0, 0, width, height);
+        
+        // Compress as JPEG with 70% quality to dramatically reduce size
+        resolve(canvas.toDataURL('image/jpeg', 0.7));
+      };
+      img.onerror = (error) => reject(error);
+    };
+    reader.onerror = (error) => reject(error);
+  });
+};
+
 interface Project {
   id: string
   title: string
@@ -53,6 +84,8 @@ export default function ProjectsManagement() {
   const [imageInputType, setImageInputType] = useState<'upload' | 'url'>('url')
   const [screenshotInputType, setScreenshotInputType] = useState<'upload' | 'url'>('url')
   const [screenshotFiles, setScreenshotFiles] = useState<File[]>([])
+  const [imageCompressionInfo, setImageCompressionInfo] = useState<string>('')
+  const [screenshotCompressionInfo, setScreenshotCompressionInfo] = useState<string>('')
 
   useEffect(() => {
     fetchProjects()
@@ -75,16 +108,22 @@ export default function ProjectsManagement() {
     }
   }
 
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
       setImageFile(file)
-      const reader = new FileReader()
-      reader.onloadend = () => {
-        setImagePreview(reader.result as string)
-        setFormData({...formData, image: reader.result as string})
+      setImageCompressionInfo('Compressing...')
+      try {
+        const compressedBase64 = await compressImage(file, 1000)
+        const originalSize = (file.size / 1024).toFixed(1)
+        const compressedSize = ((compressedBase64.length * 3) / 4 / 1024).toFixed(1)
+        setImageCompressionInfo(`Compressed from ${originalSize} KB to ${compressedSize} KB ✅`)
+        setImagePreview(compressedBase64)
+        setFormData(prev => ({...prev, image: compressedBase64}))
+      } catch (error) {
+        console.error('Error compressing image:', error)
+        setImageCompressionInfo('Compression failed ❌')
       }
-      reader.readAsDataURL(file)
     }
   }
 
@@ -135,12 +174,16 @@ export default function ProjectsManagement() {
       setImageFile(null)
       setImagePreview('')
     }
+    setImageCompressionInfo('')
+    setScreenshotCompressionInfo('')
     setShowModal(true)
   }
 
   const closeModal = () => {
     setShowModal(false)
     setEditingProject(null)
+    setImageCompressionInfo('')
+    setScreenshotCompressionInfo('')
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -451,6 +494,11 @@ export default function ProjectsManagement() {
                     <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                       📁 Supported: JPG, PNG, GIF, WebP (Max 5MB)
                     </p>
+                    {imageCompressionInfo && (
+                      <p className="text-xs font-medium text-green-600 dark:text-green-400 mt-2">
+                        {imageCompressionInfo}
+                      </p>
+                    )}
                   </div>
                 )}
               </div>
@@ -615,28 +663,38 @@ export default function ProjectsManagement() {
                           type="file"
                           accept="image/*"
                           multiple
-                          onChange={(e) => {
+                          onChange={async (e) => {
                             const files = Array.from(e.target.files || [])
                             setScreenshotFiles(files)
+                            setScreenshotCompressionInfo(`Compressing ${files.length} images...`)
                             
-                            // Convert to base64 for preview
+                            // Compress all screenshot files
                             const urls: string[] = []
-                            files.forEach((file, index) => {
-                              const reader = new FileReader()
-                              reader.onloadend = () => {
-                                urls.push(reader.result as string)
-                                if (urls.length === files.length) {
-                                  setFormData({...formData, screenshots: urls.join('\n')})
-                                }
+                            let originalTotal = 0;
+                            let compressedTotal = 0;
+                            for (const file of files) {
+                              try {
+                                originalTotal += file.size;
+                                const compressed = await compressImage(file, 800)
+                                compressedTotal += Math.round((compressed.length * 3) / 4)
+                                urls.push(compressed)
+                              } catch (err) {
+                                console.error('Error compressing screenshot:', err)
                               }
-                              reader.readAsDataURL(file)
-                            })
+                            }
+                            setScreenshotCompressionInfo(`Compressed total from ${(originalTotal/1024).toFixed(1)} KB to ${(compressedTotal/1024).toFixed(1)} KB ✅`)
+                            setFormData(prev => ({...prev, screenshots: urls.join('\n')}))
                           }}
                           className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100 dark:file:bg-primary-900 dark:file:text-primary-300"
                         />
                         <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                           📁 Select multiple images (Max 5 images, 5MB each)
                         </p>
+                        {screenshotCompressionInfo && (
+                          <p className="text-xs font-medium text-green-600 dark:text-green-400 mt-2">
+                            {screenshotCompressionInfo}
+                          </p>
+                        )}
                       </div>
                     )}
                   </div>
