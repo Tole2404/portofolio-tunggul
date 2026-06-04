@@ -117,8 +117,8 @@ export default function SkillsManagement() {
 
   // Get all unique categories from existing skills + defaults
   const defaultCategories = ['Frontend', 'Backend', 'Tools', 'Design']
-  const existingCategories = [...new Set(skills.map(s => s.category))]
-  const allCategories = [...new Set([...defaultCategories, ...existingCategories])]
+  const existingCategories = Array.from(new Set(skills.map(s => s.category)))
+  const allCategories = Array.from(new Set([...defaultCategories, ...existingCategories]))
 
   if (loading) {
     return (
