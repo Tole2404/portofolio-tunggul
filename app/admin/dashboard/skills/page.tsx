@@ -26,6 +26,7 @@ export default function SkillsManagement() {
     color: '',
     order: 0
   })
+  const [useCustomCategory, setUseCustomCategory] = useState(false)
 
   useEffect(() => {
     fetchSkills()
@@ -64,6 +65,7 @@ export default function SkillsManagement() {
         color: '',
         order: 0
       })
+      setUseCustomCategory(false)
     }
     setShowModal(true)
   }
@@ -71,6 +73,7 @@ export default function SkillsManagement() {
   const closeModal = () => {
     setShowModal(false)
     setEditingSkill(null)
+    setUseCustomCategory(false)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -111,6 +114,11 @@ export default function SkillsManagement() {
     acc[skill.category].push(skill)
     return acc
   }, {} as Record<string, Skill[]>)
+
+  // Get all unique categories from existing skills + defaults
+  const defaultCategories = ['Frontend', 'Backend', 'Tools', 'Design']
+  const existingCategories = [...new Set(skills.map(s => s.category))]
+  const allCategories = [...new Set([...defaultCategories, ...existingCategories])]
 
   if (loading) {
     return (
@@ -250,17 +258,55 @@ export default function SkillsManagement() {
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Category *
                 </label>
-                <select
-                  required
-                  value={formData.category}
-                  onChange={(e) => setFormData({...formData, category: e.target.value})}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white"
-                >
-                  <option value="Frontend">Frontend</option>
-                  <option value="Backend">Backend</option>
-                  <option value="Tools">Tools</option>
-                  <option value="Design">Design</option>
-                </select>
+                {!useCustomCategory ? (
+                  <div className="flex gap-2">
+                    <select
+                      required
+                      value={formData.category}
+                      onChange={(e) => setFormData({...formData, category: e.target.value})}
+                      className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white"
+                    >
+                      {allCategories.map(cat => (
+                        <option key={cat} value={cat}>{cat}</option>
+                      ))}
+                    </select>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setUseCustomCategory(true)
+                        setFormData({...formData, category: ''})
+                      }}
+                      className="px-3 py-2 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-400 rounded-lg transition-colors font-medium whitespace-nowrap"
+                    >
+                      + Kategori Baru
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      required
+                      autoFocus
+                      value={formData.category}
+                      onChange={(e) => setFormData({...formData, category: e.target.value})}
+                      className="flex-1 px-4 py-2 border border-primary-400 dark:border-primary-500 rounded-lg focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white"
+                      placeholder="Masukkan nama kategori baru..."
+                    />
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setUseCustomCategory(false)
+                        setFormData({...formData, category: allCategories[0] || 'Frontend'})
+                      }}
+                      className="px-3 py-2 text-sm bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors font-medium"
+                    >
+                      Batal
+                    </button>
+                  </div>
+                )}
+                <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
+                  {useCustomCategory ? '✏️ Ketik nama kategori baru, lalu simpan.' : '💡 Pilih kategori yang ada atau buat kategori baru.'}
+                </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">

@@ -567,17 +567,33 @@ export default function ProjectsManagement() {
                 </select>
               </div>
 
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  id="featured"
-                  checked={formData.featured}
-                  onChange={(e) => setFormData({...formData, featured: e.target.checked})}
-                  className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
-                />
-                <label htmlFor="featured" className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                  Featured Project
-                </label>
+              <div className="grid grid-cols-2 gap-4 items-end">
+                <div className="flex items-center gap-2 pt-1">
+                  <input
+                    type="checkbox"
+                    id="featured"
+                    checked={formData.featured}
+                    onChange={(e) => setFormData({...formData, featured: e.target.checked})}
+                    className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                  />
+                  <label htmlFor="featured" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    Featured Project
+                  </label>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    Urutan Tampil
+                    <span className="ml-1 text-xs text-gray-400 font-normal">(angka kecil = tampil duluan)</span>
+                  </label>
+                  <input
+                    type="number"
+                    min="0"
+                    value={formData.order}
+                    onChange={(e) => setFormData({...formData, order: Number(e.target.value)})}
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white"
+                    placeholder="0"
+                  />
+                </div>
               </div>
 
               {/* Modal Detail Fields */}
