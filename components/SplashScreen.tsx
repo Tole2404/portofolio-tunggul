@@ -3,11 +3,17 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { Zap, Terminal } from 'lucide-react'
+import { usePathname } from 'next/navigation'
 
 export default function SplashScreen() {
+  const pathname = usePathname()
   const [isLoading, setIsLoading] = useState(true)
   const [progress, setProgress] = useState(0)
   const [textIndex, setTextIndex] = useState(0)
+
+  if (pathname?.startsWith('/v2')) {
+    return null
+  }
 
   const loadingTexts = [
     "initializing vibe check...",
